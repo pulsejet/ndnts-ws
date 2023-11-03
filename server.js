@@ -20,11 +20,7 @@ wss.on('connection', (ws) => {
   clients.add(ws);
 
   ws.on('message', (message) => {
-    // console.log('received message of length %d', message.length);
-    console.log(message);
-    //convert to Uint8Array
     const uint8Array = new Uint8Array(message);
-    console.log(uint8Array);
 
     // Broadcast the received message to all connected clients
     clients.forEach((client) => {
